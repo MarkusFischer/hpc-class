@@ -10,6 +10,7 @@ for benchmark in benchmarks:
     print(benchmark)
     data = []
     for i in range(1, 33):
+        print(f"Cores: {i}")
         worker_string = "S0:1GB:" + str(i)
         esa_string = subprocess.run(["likwid-bench", "-t", benchmark, "-w", worker_string],
                                 capture_output=True).stdout
@@ -19,7 +20,7 @@ for benchmark in benchmarks:
             if string.startswith("MFlops/s:"):
                 flops = float(string.split()[1])
                 break
-        print((i, flops)
+        print((i, flops))
         data.append((i, flops)) 
     plt.figure()
     plt.title(benchmark)
