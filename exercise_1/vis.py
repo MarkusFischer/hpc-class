@@ -15,11 +15,11 @@ for benchmark in benchmarks:
         benchmark_results = subprocess.run(["likwid-bench", "-t", benchmark, "-w", worker_string],
                                 capture_output=True).stdout
         print(benchmark_results)
-        splitted_string = benchmark_results.split('\n')
+        splitted_string = benchmark_results.split('\\n')
         flops = 0
         for string in splitted_string:
             if string.startswith("MFlops/s:"):
-                flops = float(string.split()[1])
+                flops = float(string.split()[-1])
                 break
         print((i, flops))
         data.append((i, flops)) 
