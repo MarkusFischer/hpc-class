@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import subprocess
 
-benchmarks = ["peak_asimd_scalar_dp.ptt", "peak_asimd_scalar_sp.ptt", "peak_asmid_simd_dp.ptt", "peak_asmid_simd_sp.ptt"]
+benchmarks = ["peak_asimd_scalar_dp", "peak_asimd_scalar_sp", "peak_asmid_simd_dp", "peak_asmid_simd_sp"]
 
 
 #data = [(1,1000.),(2,2000.),(3,3000.)]
