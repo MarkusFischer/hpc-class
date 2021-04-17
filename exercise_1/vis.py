@@ -12,9 +12,10 @@ for benchmark in benchmarks:
     for i in range(1, 33):
         print(f"Cores: {i}")
         worker_string = "S0:1GB:" + str(i)
-        esa_string = subprocess.run(["likwid-bench", "-t", benchmark, "-w", worker_string],
+        benchmark_results = subprocess.run(["likwid-bench", "-t", benchmark, "-w", worker_string],
                                 capture_output=True).stdout
-        splitted_string = esa_string.split('\n')
+        print(benchmark_results)
+        splitted_string = benchmark_results.split('\n')
         flops = 0
         for string in splitted_string:
             if string.startswith("MFlops/s:"):
