@@ -34,7 +34,7 @@ for benchmark in benchmarks:
         data_threads.append((i, flops))
         
     plt.scatter(*zip(*data_cores), label="cores " + benchmark)
-    plt.scatter(*zip(*data_threads), label="Threads " + benchmark))
+    plt.scatter(*zip(*data_threads), label="Threads " + benchmark)
     plt.ylabel("MFLOP/s")
     plt.xlabel("No. of cores/threads")
     
