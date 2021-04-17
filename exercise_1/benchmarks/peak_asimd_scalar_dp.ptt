@@ -1,0 +1,31 @@
+STREAMS 1
+TYPE DOUBLE
+FLOPS 2
+BYTES 0
+DESC Double precision scalar FMA ops on registers.
+LOOP 20
+fmadd d0, d30, d31, d0
+fmadd d1, d30, d31, d1
+fmadd d2, d30, d31, d2
+fmadd d3, d30, d31, d3
+
+fmadd d4, d30, d31, d4
+fmadd d5, d30, d31, d5
+fmadd d6, d30, d31, d6
+fmadd d7, d30, d31, d7
+
+fmadd d16, d30, d31, d16
+fmadd d17, d30, d31, d17
+fmadd d18, d30, d31, d18
+fmadd d19, d30, d31, d19
+
+fmadd d20, d30, d31, d20
+fmadd d21, d30, d31, d21
+fmadd d22, d30, d31, d22
+fmadd d23, d30, d31, d23
+
+fmadd d24, d30, d31, d24
+fmadd d25, d30, d31, d25
+fmadd d26, d30, d31, d26
+fmadd d27, d30, d31, d27
+

@@ -1,0 +1,30 @@
+STREAMS 1
+TYPE DOUBLE
+FLOPS 4
+BYTES 0
+DESC Double precision SIMD-FMA ops on registers.
+LOOP 20
+fmla v0.2d, v30.2d, v31.2d
+fmla v1.2d, v30.2d, v31.2d
+fmla v2.2d, v30.2d, v31.2d
+fmla v3.2d, v30.2d, v31.2d
+
+fmla v4.2d, v30.2d, v31.2d
+fmla v5.2d, v30.2d, v31.2d
+fmla v6.2d, v30.2d, v31.2d
+fmla v7.2d, v30.2d, v31.2d
+
+fmla v16.2d, v30.2d, v31.2d
+fmla v17.2d, v30.2d, v31.2d
+fmla v18.2d, v30.2d, v31.2d
+fmla v19.2d, v30.2d, v31.2d
+
+fmla v20.2d, v30.2d, v31.2d
+fmla v21.2d, v30.2d, v31.2d
+fmla v22.2d, v30.2d, v31.2d
+fmla v23.2d, v30.2d, v31.2d
+
+fmla v24.2d, v30.2d, v31.2d
+fmla v25.2d, v30.2d, v31.2d
+fmla v26.2d, v30.2d, v31.2d
+fmla v27.2d, v30.2d, v31.2d 

@@ -1,0 +1,30 @@
+STREAMS 1
+TYPE SINGLE
+FLOPS 2
+BYTES 0
+DESC Single precision scalar FMA ops on registers.
+LOOP 20
+fmadd s0, s30, s31, s0
+fmadd s1, s30, s31, s1
+fmadd s2, s30, s31, s2
+fmadd s3, s30, s31, s3
+
+fmadd s4, s30, s31, s4
+fmadd s5, s30, s31, s5
+fmadd s6, s30, s31, s6
+fmadd s7, s30, s31, s7
+
+fmadd s16, s30, s31, s16
+fmadd s17, s30, s31, s17
+fmadd s18, s30, s31, s18
+fmadd s19, s30, s31, s19
+
+fmadd s20, s30, s31, s20
+fmadd s21, s30, s31, s21
+fmadd s22, s30, s31, s22
+fmadd s23, s30, s31, s23
+
+fmadd s24, s30, s31, s24
+fmadd s25, s30, s31, s25
+fmadd s26, s30, s31, s26
+fmadd s27, s30, s31, s27 
