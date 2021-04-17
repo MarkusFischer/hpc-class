@@ -4,11 +4,10 @@ import subprocess
 benchmarks = ["peak_asimd_scalar_dp", "peak_asimd_scalar_sp", "peak_asmid_simd_dp", "peak_asmid_simd_sp"]
 
 
-#data = [(1,1000.),(2,2000.),(3,3000.)]
-
 for benchmark in benchmarks:
     print(benchmark)
-    data = []
+    data_cores = []
+    data_threads = []
     for i in range(1, 33):
         print(f"Cores: {i}")
         worker_string = "S0:1GB:" + str(i)
@@ -21,18 +20,8 @@ for benchmark in benchmarks:
                 flops = float(string.split("\\t")[-1])
                 break
         print((i, flops))
-        data.append((i, flops)) 
-    plt.figure()
-    plt.title(benchmark)
-    plt.scatter(*zip(*data))
-    plt.ylabel("FLOPS")
-    plt.xlabel("No. of cores")
-    plt.savefig(benchmark + "_cores_" + ".png")
-    
-    data = []
-    for i in range(1, 33):
-        print(f"Threads: {i}")
-        worker_string = "S0:1GB:" + str(i)
+        data_cores.append((i, flops)) 
+        
         benchmark_results = subprocess.run(["likwid-pin", "-c", "S0:0", "likwid-bench", "-t", benchmark, "-w", worker_string],
                                 capture_output=True).stdout
         splitted_string = str(benchmark_results).split('\\n')
@@ -42,11 +31,12 @@ for benchmark in benchmarks:
                 flops = float(string.split("\\t")[-1])
                 break
         print((i, flops))
-        data.append((i, flops)) 
+        data_threads.append((i, flops))
+        
     plt.figure()
     plt.title(benchmark)
-    plt.scatter(*zip(*data))
-    plt.ylabel("FLOPS")
-    plt.xlabel("No. of threads")
-    plt.savefig(benchmark + "_threads_" + ".png")
-
+    plt.scatter(*zip(*data_cores), label="Cores")
+    plt.scatter(*zip(*data_threads, label="Threads"))
+    plt.ylabel("MFLOP/s")
+    plt.xlabel("No. of cores/Threads")
+    plt.savefig(benchmark + ".png")
