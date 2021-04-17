@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 import subprocess
 
-benchmarks = ["peak_asimd_scalar_dp", "peak_asimd_scalar_sp", "peak_asmid_simd_dp", "peak_asmid_simd_sp"]
+benchmarks = ["peak_asimd_scalar_sp", "peak_asimd_scalar_dp", "peak_asmid_simd_sp", "peak_asmid_simd_dp"]
 
-
+plt.figure()
 for benchmark in benchmarks:
     print(benchmark)
     data_cores = []
@@ -33,11 +33,10 @@ for benchmark in benchmarks:
         print((i, flops))
         data_threads.append((i, flops))
         
-    plt.figure()
-    plt.title(benchmark)
-    plt.scatter(*zip(*data_cores), label="Cores")
-    plt.scatter(*zip(*data_threads, label="Threads"))
+    plt.scatter(*zip(*data_cores), label="cores " + benchmark)
+    plt.scatter(*zip(*data_threads), label="Threads " + benchmark))
     plt.ylabel("MFLOP/s")
-    plt.xlabel("No. of cores/Threads")
-    plt.legend()
-    plt.savefig(benchmark + ".png")
+    plt.xlabel("No. of cores/threads")
+    
+plt.legend()
+plt.savefig(benchmark + ".png")
