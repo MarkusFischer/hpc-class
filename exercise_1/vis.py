@@ -35,8 +35,10 @@ for benchmark in benchmarks:
         
     plt.scatter(*zip(*data_cores), label="cores " + benchmark)
     plt.scatter(*zip(*data_threads), label="Threads " + benchmark)
-    plt.ylabel("MFLOP/s")
-    plt.xlabel("No. of cores/threads")
     
+
+plt.ylabel("MFLOP/s")
+
+plt.xlabel("No. of cores/threads")    
 plt.legend()
-plt.savefig(benchmark + ".png")
+plt.savefig("benchmark.png")
