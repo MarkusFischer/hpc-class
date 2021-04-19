@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import subprocess
 
-benchmarks = ["peak_asimd_scalar_sp", "peak_asimd_scalar_dp", "peak_asmid_simd_sp", "peak_asmid_simd_dp"]
+benchmarks = ["peak_asimd_scalar_sp", "peak_asimd_scalar_dp", "peak_asimd_simd_sp", "peak_asimd_simd_dp"]
 
 plt.figure()
 for benchmark in benchmarks:
