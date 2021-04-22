@@ -1,0 +1,24 @@
+bit patterns
+#############
+unsigned char l_data1  = 1: 00000001
+unsigned char l_data2  = 255: 11111111
+unsigned char l_data3 = l_data2 + 1:00000000
+unsigned char l_data4  = 0xA1: 10100001
+unsigned char l_data5  = 0b1001011: 01001011
+unsigned char l_data6  = 'H': 01001000
+char l_data7  = -4: 11111100
+unsigned int  l_data8  = 1u << 11: 00000000000000000000100000000000
+unsigned int  l_data9 = l_data8 << 21: 00000000000000000000000000000000
+unsigned int  l_data10  = 0xFFFFFFFF >> 5: 00000111111111111111111111111111
+unsigned int  l_data11 = 0b1001 ^ 0b01111: 00000000000000000000000000000110
+unsigned int  l_data12 = ~0b1001: 11111111111111111111111111110110
+unsigned int  l_data13 = 0xF0 & 0b1010101: 00000000000000000000000001010000
+unsigned int  l_data14 = 0b001 | 0b101: 00000000000000000000000000000101
+unsigned int  l_data15 = 7743: 00000000000000000001111000111111
+int  l_data16 = -7743: 11111111111111111110000111000001
+#############
+
+Testing instruction_asimd_compute:
+Test case 1: Success!
+Test case 2: Success!
+Test case 3: Success!
