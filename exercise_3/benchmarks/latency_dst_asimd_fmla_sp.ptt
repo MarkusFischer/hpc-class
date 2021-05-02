@@ -1,0 +1,30 @@
+STREAMS 1
+TYPE SINGLE
+FLOPS 8
+BYTES 0
+DESC Single precision SIMD-FMA ops on registers.
+LOOP 20
+fmla v0.4s, v30.4s, v31.4s
+fmla v0.4s, v30.4s, v31.4s
+fmla v0.4s, v30.4s, v31.4s
+fmla v0.4s, v30.4s, v31.4s
+
+fmla v0.4s, v30.4s, v31.4s
+fmla v0.4s, v30.4s, v31.4s
+fmla v0.4s, v30.4s, v31.4s
+fmla v0.4s, v30.4s, v31.4s
+
+fmla v0.4s, v30.4s, v31.4s
+fmla v0.4s, v30.4s, v31.4s
+fmla v0.4s, v30.4s, v31.4s
+fmla v0.4s, v30.4s, v31.4s
+
+fmla v0.4s, v30.4s, v31.4s
+fmla v0.4s, v30.4s, v31.4s
+fmla v0.4s, v30.4s, v31.4s
+fmla v0.4s, v30.4s, v31.4s
+
+fmla v0.4s, v30.4s, v31.4s
+fmla v0.4s, v30.4s, v31.4s
+fmla v0.4s, v30.4s, v31.4s
+fmla v0.4s, v30.4s, v31.4s
