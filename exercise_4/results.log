@@ -1,0 +1,221 @@
+ M = N = K = ld A = ld B = ld C = 4
+ Initializing random matrices...
+Necessary floating point operations per gemm: 112
+Starting time measuring.
+Needed time for 10000 multiplications: 0.00434001
+Average time: 4.34001e-07
+Sustained GFLOPS: 2.58064e+08
+ M = N = K = ld A = ld B = ld C = 8
+ Initializing random matrices...
+Necessary floating point operations per gemm: 960
+Starting time measuring.
+Needed time for 10000 multiplications: 0.0316071
+Average time: 3.16071e-06
+Sustained GFLOPS: 3.03729e+08
+ M = N = K = ld A = ld B = ld C = 12
+ Initializing random matrices...
+Necessary floating point operations per gemm: 3312
+Starting time measuring.
+Needed time for 10000 multiplications: 0.115655
+Average time: 1.15655e-05
+Sustained GFLOPS: 2.86369e+08
+ M = N = K = ld A = ld B = ld C = 16
+ Initializing random matrices...
+Necessary floating point operations per gemm: 7936
+Starting time measuring.
+Needed time for 10000 multiplications: 0.272965
+Average time: 2.72965e-05
+Sustained GFLOPS: 2.90733e+08
+ M = N = K = ld A = ld B = ld C = 24
+ Initializing random matrices...
+Necessary floating point operations per gemm: 27072
+Starting time measuring.
+Needed time for 10000 multiplications: 0.921416
+Average time: 9.21416e-05
+Sustained GFLOPS: 2.93809e+08
+ M = N = K = ld A = ld B = ld C = 32
+ Initializing random matrices...
+Necessary floating point operations per gemm: 64512
+Starting time measuring.
+Needed time for 10000 multiplications: 2.20282
+Average time: 0.000220282
+Sustained GFLOPS: 2.9286e+08
+ M = N = K = ld A = ld B = ld C = 48
+ Initializing random matrices...
+Necessary floating point operations per gemm: 218880
+Starting time measuring.
+Needed time for 10000 multiplications: 7.41012
+Average time: 0.000741012
+Sustained GFLOPS: 2.9538e+08
+ M = N = K = ld A = ld B = ld C = 64
+ Initializing random matrices...
+Necessary floating point operations per gemm: 520192
+Starting time measuring.
+Needed time for 10000 multiplications: 17.5927
+Average time: 0.00175927
+Sustained GFLOPS: 5.15528e+07
+###########################
+
+Comparing results... 
+Test passed!
+Measuring performance... 
+Necessary floating point operations per gemm: 64512
+gemm_compiler_32_32_32_32_32_32_mnk:
+Needed time for 10000 multiplications: 1.55952
+Average time: 0.000155952
+Sustained GFLOPS: 4.13666e+08
+gemm_compiler_32_32_32_32_32_32_nkm:
+Needed time for 10000 multiplications: 1.58537
+Average time: 0.000158537
+Sustained GFLOPS: 4.06922e+08
+\n
+
+
+Optimization Level 2
+
+
+ M = N = K = ld A = ld B = ld C = 4
+ Initializing random matrices...
+Necessary floating point operations per gemm: 112
+Starting time measuring.
+Needed time for 10000 multiplications: 0.000884342
+Average time: 8.84342e-08
+Sustained GFLOPS: 1.26648e+09
+ M = N = K = ld A = ld B = ld C = 8
+ Initializing random matrices...
+Necessary floating point operations per gemm: 960
+Starting time measuring.
+Needed time for 10000 multiplications: 0.00550541
+Average time: 5.50541e-07
+Sustained GFLOPS: 1.74374e+09
+ M = N = K = ld A = ld B = ld C = 12
+ Initializing random matrices...
+Necessary floating point operations per gemm: 3312
+Starting time measuring.
+Needed time for 10000 multiplications: 0.016855
+Average time: 1.6855e-06
+Sustained GFLOPS: 1.96499e+09
+ M = N = K = ld A = ld B = ld C = 16
+ Initializing random matrices...
+Necessary floating point operations per gemm: 7936
+Starting time measuring.
+Needed time for 10000 multiplications: 0.0391921
+Average time: 3.91921e-06
+Sustained GFLOPS: 2.0249e+09
+ M = N = K = ld A = ld B = ld C = 24
+ Initializing random matrices...
+Necessary floating point operations per gemm: 27072
+Starting time measuring.
+Needed time for 10000 multiplications: 0.124065
+Average time: 1.24065e-05
+Sustained GFLOPS: 2.18208e+09
+ M = N = K = ld A = ld B = ld C = 32
+ Initializing random matrices...
+Necessary floating point operations per gemm: 64512
+Starting time measuring.
+Needed time for 10000 multiplications: 0.285041
+Average time: 2.85041e-05
+Sustained GFLOPS: 2.26325e+09
+ M = N = K = ld A = ld B = ld C = 48
+ Initializing random matrices...
+Necessary floating point operations per gemm: 218880
+Starting time measuring.
+Needed time for 10000 multiplications: 0.934827
+Average time: 9.34827e-05
+Sustained GFLOPS: 2.3414e+09
+ M = N = K = ld A = ld B = ld C = 64
+ Initializing random matrices...
+Necessary floating point operations per gemm: 520192
+Starting time measuring.
+Needed time for 10000 multiplications: 2.19201
+Average time: 0.000219201
+Sustained GFLOPS: 4.13753e+08
+###########################
+
+Comparing results... 
+Test passed!
+Measuring performance... 
+Necessary floating point operations per gemm: 64512
+gemm_compiler_32_32_32_32_32_32_mnk:
+Needed time for 10000 multiplications: 0.280781
+Average time: 2.80781e-05
+Sustained GFLOPS: 2.29759e+09
+gemm_compiler_32_32_32_32_32_32_nkm:
+Needed time for 10000 multiplications: 0.270664
+Average time: 2.70664e-05
+Sustained GFLOPS: 2.38347e+09
+
+
+Optimization Level 3
+
+
+ M = N = K = ld A = ld B = ld C = 4
+ Initializing random matrices...
+Necessary floating point operations per gemm: 112
+Starting time measuring.
+Needed time for 10000 multiplications: 0.000884317
+Average time: 8.84317e-08
+Sustained GFLOPS: 1.26651e+09
+ M = N = K = ld A = ld B = ld C = 8
+ Initializing random matrices...
+Necessary floating point operations per gemm: 960
+Starting time measuring.
+Needed time for 10000 multiplications: 0.00550515
+Average time: 5.50515e-07
+Sustained GFLOPS: 1.74382e+09
+ M = N = K = ld A = ld B = ld C = 12
+ Initializing random matrices...
+Necessary floating point operations per gemm: 3312
+Starting time measuring.
+Needed time for 10000 multiplications: 0.0170636
+Average time: 1.70636e-06
+Sustained GFLOPS: 1.94097e+09
+ M = N = K = ld A = ld B = ld C = 16
+ Initializing random matrices...
+Necessary floating point operations per gemm: 7936
+Starting time measuring.
+Needed time for 10000 multiplications: 0.0389048
+Average time: 3.89049e-06
+Sustained GFLOPS: 2.03985e+09
+ M = N = K = ld A = ld B = ld C = 24
+ Initializing random matrices...
+Necessary floating point operations per gemm: 27072
+Starting time measuring.
+Needed time for 10000 multiplications: 0.12407
+Average time: 1.2407e-05
+Sustained GFLOPS: 2.18199e+09
+ M = N = K = ld A = ld B = ld C = 32
+ Initializing random matrices...
+Necessary floating point operations per gemm: 64512
+Starting time measuring.
+Needed time for 10000 multiplications: 0.28517
+Average time: 2.8517e-05
+Sustained GFLOPS: 2.26223e+09
+ M = N = K = ld A = ld B = ld C = 48
+ Initializing random matrices...
+Necessary floating point operations per gemm: 218880
+Starting time measuring.
+Needed time for 10000 multiplications: 0.934791
+Average time: 9.34791e-05
+Sustained GFLOPS: 2.34149e+09
+ M = N = K = ld A = ld B = ld C = 64
+ Initializing random matrices...
+Necessary floating point operations per gemm: 520192
+Starting time measuring.
+Needed time for 10000 multiplications: 2.19036
+Average time: 0.000219036
+Sustained GFLOPS: 4.14065e+08
+###########################
+
+Comparing results... 
+Test passed!
+Measuring performance... 
+Necessary floating point operations per gemm: 64512
+gemm_compiler_32_32_32_32_32_32_mnk:
+Needed time for 10000 multiplications: 0.280758
+Average time: 2.80758e-05
+Sustained GFLOPS: 2.29778e+09
+gemm_compiler_32_32_32_32_32_32_nkm:
+Needed time for 10000 multiplications: 0.05517
+Average time: 5.517e-06
+Sustained GFLOPS: 1.16933e+10
