@@ -9,7 +9,7 @@
 int main()
 {
     std::vector<unsigned int> lambdas = {4, 8, 12, 16, 24, 32, 48, 64};
-    const unsigned int iterations = 10;
+    const unsigned int iterations = 1000000;
     
     for (auto lambda : lambdas) 
     {
