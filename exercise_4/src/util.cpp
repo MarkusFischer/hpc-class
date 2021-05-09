@@ -27,7 +27,7 @@ float* random_matrix(unsigned int i_m,
                      unsigned int i_n, 
                      unsigned int i_ld)
 {
-    if (i_ld < m)
+    if (i_ld < i_m)
         return nullptr;
     
     std::random_device rd;

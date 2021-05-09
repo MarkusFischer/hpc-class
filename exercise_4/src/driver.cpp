@@ -23,17 +23,19 @@ int main()
         
         std::cout << "Starting time measuring." << std::endl;
         
-        auto start_time = std::chrono::high_resoultion_clock::now();
+        auto start_time = std::chrono::high_resolution_clock::now();
         for (size_t i = 0; i < iterations; ++i) 
         {
             gemm_ref(A, B, C, lambda, lambda, lambda, lambda, lambda, lambda);
         }
-        auto end_time = std::chrono::high_resoultion_clock::now();
-        auto needed_time = std::chrono::duration_cast<std::chrono::seconds>(end_time - start_time);
+        auto end_time = std::chrono::high_resolution_clock::now();
+        //auto time = std::chrono::duration_cast<std::chrono::seconds>(end_time - start_time);
+        //std::chrono::duration<double, std::seconds> needed_time = end_time - start_time;
+        std::chrono::duration<double> needed_time = end_time - start_time;
         
-        std::cout << "Needed time for " << iterations << " multiplications: " << needed_time << std::endl;
-        std::cout << "Average time: " << needed_time / iterations << std::endl;
-        std::cout << "Sustained GFLOPS: " << flop_gemm * iterations / needed_time << std::endl;
+        std::cout << "Needed time for " << iterations << " multiplications: " << needed_time.count() << std::endl;
+        std::cout << "Average time: " << needed_time.count() / iterations << std::endl;
+        std::cout << "Sustained GFLOPS: " << flop_gemm * iterations / needed_time.count() << std::endl;
         delete[] A;
         delete[] B;
         delete[] C;
