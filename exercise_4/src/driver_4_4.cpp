@@ -10,7 +10,7 @@
 int main()
 {
     std::vector<unsigned int> lambdas = {4, 8, 12, 16, 24, 32, 48, 64};
-    const unsigned int iterations = 10000;
+    const unsigned int iterations = 100000;
     
     for (auto lambda : lambdas) 
     {
@@ -20,7 +20,7 @@ int main()
         int lda = lambda;
         int ldb = lambda;
         int ldc = lambda;
-        
+        std::cout << "#######################################" << std::endl; 
         std::cout << " M = N = K = ld A = ld B = ld C = " << lambda << std::endl;
         std::cout << " Initializing random matrices..." << std::endl;
         float* A = random_matrix(m, k, lda);
@@ -47,9 +47,8 @@ int main()
         std::cout << "Average time: " << needed_time.count() / iterations << std::endl;
         std::cout << "Sustained FLOPS: " << flop_gemm * iterations / needed_time.count() << std::endl;
         
-        std::cout << "###########################" << std::endl << std::endl;
-        
-        std::cout << "Performance of libxsmm kernel" << std::endl;
+             
+        std::cout << std::endl << "Performance of libxsmm kernel" << std::endl;
         
         float alpha = 1.0, beta = 1.0;
         int flags = LIBXSMM_GEMM_FLAG_NONE;
@@ -72,6 +71,7 @@ int main()
         std::cout << "Average time: " << needed_time.count() / iterations << std::endl;
         std::cout << "Sustained FLOPS: " << flop_gemm * iterations / needed_time.count() << std::endl;
         
+	std::cout << "################################" << std::endl << std::endl;
         delete[] A;
         delete[] B;
         delete[] C;
