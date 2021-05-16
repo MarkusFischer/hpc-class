@@ -49,7 +49,7 @@ int main()
         
         std::cout << "###########################" << std::endl << std::endl;
         
-        std::cout << "Performance of libxsmm kernel"
+        std::cout << "Performance of libxsmm kernel" << std::endl;
         
         double alpha = 1.0, beta = 1.0;
         int flags = LIBXSMM_GEMM_FLAG_NONE;
