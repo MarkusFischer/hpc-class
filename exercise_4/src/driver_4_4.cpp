@@ -53,7 +53,7 @@ int main()
         
         double alpha = 1.0, beta = 1.0;
         int flags = LIBXSMM_GEMM_FLAG_NONE;
-        libxsmm_dmmfunction kernel = libxsmm_dmmdispatch(m, n, k, lda, ldb, ldc, &alpha, &beta, &flags, nullptr /*prefetch*/);
+        libxsmm_dmmfunction kernel = libxsmm_smmdispatch(m, n, k, lda, ldb, ldc, &alpha, &beta, &flags, nullptr /*prefetch*/);
         
         kernel(A, B, C);
         
