@@ -14,12 +14,12 @@ int main()
     
     for (auto lambda : lambdas) 
     {
-        unsigned int m = lambda;
-        unsigned int n = lambda;
-        unsigned int k = lambda;
-        unsigned int lda = lambda;
-        unsigned int ldb = lambda;
-        unsigned int ldc = lambda;
+        int m = lambda;
+        int n = lambda;
+        int k = lambda;
+        int lda = lambda;
+        int ldb = lambda;
+        int ldc = lambda;
         
         std::cout << " M = N = K = ld A = ld B = ld C = " << lambda << std::endl;
         std::cout << " Initializing random matrices..." << std::endl;
@@ -53,7 +53,7 @@ int main()
         
         float alpha = 1.0, beta = 1.0;
         int flags = LIBXSMM_GEMM_FLAG_NONE;
-        libxsmm_dmmfunction kernel = libxsmm_smmdispatch(m, n, k, lda, ldb, ldc, &alpha, &beta, &flags, nullptr /*prefetch*/);
+        libxsmm_dmmfunction kernel = libxsmm_smmdispatch(&m, &n, &k, &lda, &ldb, &ldc, &alpha, &beta, &flags, nullptr /*prefetch*/);
         
         kernel(A, B, C);
         
