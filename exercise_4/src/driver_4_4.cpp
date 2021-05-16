@@ -59,14 +59,14 @@ int main()
         
         
         std::cout << "Starting time measuring (libxsmm kernel)." << std::endl;
-        auto start_time = std::chrono::high_resolution_clock::now();
+        start_time = std::chrono::high_resolution_clock::now();
         for (size_t i = 0; i < iterations; ++i) 
         {
             kernel(A, B, C);
         }
-        auto end_time = std::chrono::high_resolution_clock::now();
+        end_time = std::chrono::high_resolution_clock::now();
         
-        std::chrono::duration<double> needed_time = end_time - start_time;
+        needed_time = end_time - start_time;
         
         std::cout << "Needed time for " << iterations << " multiplications: " << needed_time.count() << std::endl;
         std::cout << "Average time: " << needed_time.count() / iterations << std::endl;
