@@ -51,7 +51,7 @@ int main()
         
         std::cout << "Performance of libxsmm kernel" << std::endl;
         
-        double alpha = 1.0, beta = 1.0;
+        float alpha = 1.0, beta = 1.0;
         int flags = LIBXSMM_GEMM_FLAG_NONE;
         libxsmm_dmmfunction kernel = libxsmm_smmdispatch(m, n, k, lda, ldb, ldc, &alpha, &beta, &flags, nullptr /*prefetch*/);
         
