@@ -1,0 +1,144 @@
+#######################################
+ M = N = K = ld A = ld B = ld C = 4
+ Initializing random matrices...
+Necessary floating point operations per gemm: 128
+Starting time measuring (reference kernel).
+Needed time for 100000 multiplications: 0.00892008
+Average time: 8.92008e-08
+Sustained FLOPS: 1.43496e+09
+
+Performance of libxsmm kernel
+Comparing results... 
+Test passed!
+Starting time measuring (libxsmm kernel).
+Needed time for 100000 multiplications: 0.000990121
+Average time: 9.90121e-09
+Sustained FLOPS: 1.29277e+10
+################################
+
+#######################################
+ M = N = K = ld A = ld B = ld C = 8
+ Initializing random matrices...
+Necessary floating point operations per gemm: 1024
+Starting time measuring (reference kernel).
+Needed time for 100000 multiplications: 0.0551518
+Average time: 5.51518e-07
+Sustained FLOPS: 1.85669e+09
+
+Performance of libxsmm kernel
+Comparing results... 
+Test passed!
+Starting time measuring (libxsmm kernel).
+Needed time for 100000 multiplications: 0.00394669
+Average time: 3.94669e-08
+Sustained FLOPS: 2.59458e+10
+################################
+
+#######################################
+ M = N = K = ld A = ld B = ld C = 12
+ Initializing random matrices...
+Necessary floating point operations per gemm: 3456
+Starting time measuring (reference kernel).
+Needed time for 100000 multiplications: 0.168901
+Average time: 1.68901e-06
+Sustained FLOPS: 2.04617e+09
+
+Performance of libxsmm kernel
+Comparing results... 
+Test passed!
+Starting time measuring (libxsmm kernel).
+Needed time for 100000 multiplications: 0.0108521
+Average time: 1.08521e-07
+Sustained FLOPS: 3.18463e+10
+################################
+
+#######################################
+ M = N = K = ld A = ld B = ld C = 16
+ Initializing random matrices...
+Necessary floating point operations per gemm: 8192
+Starting time measuring (reference kernel).
+Needed time for 100000 multiplications: 0.389181
+Average time: 3.89181e-06
+Sustained FLOPS: 2.10493e+09
+
+Performance of libxsmm kernel
+Comparing results... 
+Test passed!
+Starting time measuring (libxsmm kernel).
+Needed time for 100000 multiplications: 0.024601
+Average time: 2.4601e-07
+Sustained FLOPS: 3.32995e+10
+################################
+
+#######################################
+ M = N = K = ld A = ld B = ld C = 24
+ Initializing random matrices...
+Necessary floating point operations per gemm: 27648
+Starting time measuring (reference kernel).
+Needed time for 100000 multiplications: 1.24057
+Average time: 1.24057e-05
+Sustained FLOPS: 2.22866e+09
+
+Performance of libxsmm kernel
+Comparing results... 
+Test passed!
+Starting time measuring (libxsmm kernel).
+Needed time for 100000 multiplications: 0.0815945
+Average time: 8.15945e-07
+Sustained FLOPS: 3.38846e+10
+################################
+
+#######################################
+ M = N = K = ld A = ld B = ld C = 32
+ Initializing random matrices...
+Necessary floating point operations per gemm: 65536
+Starting time measuring (reference kernel).
+Needed time for 100000 multiplications: 2.85571
+Average time: 2.85571e-05
+Sustained FLOPS: 7.90919e+08
+
+Performance of libxsmm kernel
+Comparing results... 
+Test passed!
+Starting time measuring (libxsmm kernel).
+Needed time for 100000 multiplications: 0.183731
+Average time: 1.83731e-06
+Sustained FLOPS: 1.22932e+10
+################################
+
+#######################################
+ M = N = K = ld A = ld B = ld C = 48
+ Initializing random matrices...
+Necessary floating point operations per gemm: 221184
+Starting time measuring (reference kernel).
+Needed time for 100000 multiplications: 9.36223
+Average time: 9.36223e-05
+Sustained FLOPS: 6.87404e+07
+
+Performance of libxsmm kernel
+Comparing results... 
+Test passed!
+Starting time measuring (libxsmm kernel).
+Needed time for 100000 multiplications: 0.599048
+Average time: 5.99048e-06
+Sustained FLOPS: 1.07431e+09
+################################
+
+#######################################
+ M = N = K = ld A = ld B = ld C = 64
+ Initializing random matrices...
+Necessary floating point operations per gemm: 524288
+Starting time measuring (reference kernel).
+Needed time for 100000 multiplications: 21.9451
+Average time: 0.000219451
+Sustained FLOPS: 4.05189e+07
+
+Performance of libxsmm kernel
+Comparing results... 
+Test passed!
+Starting time measuring (libxsmm kernel).
+Needed time for 100000 multiplications: 1.39106
+Average time: 1.39106e-05
+Sustained FLOPS: 6.3922e+08
+################################
+
