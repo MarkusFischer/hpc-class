@@ -12,12 +12,6 @@ int main()
     std::vector<unsigned int> lambdas = {4, 8, 12, 16, 24, 32, 48, 64};
     const unsigned int iterations = 100000;
     
-    std::cout << "Comparing kernel results." << std::endl;
-    
-    
-    gemm_ref(A_test, B_test, C_ref,);
-    gemm_compiler_32_32_32_32_32_32_mnk(A, B, C_mnk);
-    gemm_compiler_32_32_32_32_32_32_nkm(A, B, C_nkm);
     
     
     
