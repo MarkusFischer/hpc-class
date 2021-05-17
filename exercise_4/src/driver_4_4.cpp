@@ -12,6 +12,15 @@ int main()
     std::vector<unsigned int> lambdas = {4, 8, 12, 16, 24, 32, 48, 64};
     const unsigned int iterations = 100000;
     
+    std::cout << "Comparing kernel results." << std::endl;
+    
+    
+    gemm_ref(A_test, B_test, C_ref,);
+    gemm_compiler_32_32_32_32_32_32_mnk(A, B, C_mnk);
+    gemm_compiler_32_32_32_32_32_32_nkm(A, B, C_nkm);
+    
+    
+    
     for (auto lambda : lambdas) 
     {
         int m = lambda;
@@ -32,7 +41,13 @@ int main()
         
         std::cout << "Starting time measuring (reference kernel)." << std::endl;
         
-        gemm_ref(A, B, C, m, n, k, lda, ldb, ldc);
+        float* A_test = random_matrix(m, k, lda);
+        float* B_test = random_matrix(k, n, ldb);
+        float* C_ref = zero_matrix(m, n, ldc);
+        float* C_xsmm = zero_matrix(m, n, ldc);
+      
+        
+        gemm_ref(A_test, B_test, C_ref, m, n, k, lda, ldb, ldc);
         
         auto start_time = std::chrono::high_resolution_clock::now();
         for (size_t i = 0; i < iterations; ++i) 
@@ -54,8 +69,17 @@ int main()
         int flags = LIBXSMM_GEMM_FLAG_NONE;
         libxsmm_smmfunction kernel = libxsmm_smmdispatch(m, n, k, &lda, &ldb, &ldc, &alpha, &beta, &flags, nullptr /*prefetch*/);
         
-        kernel(A, B, C);
+        kernel(A_test, B_test, C_xsmm);
         
+        std::cout << "Comparing results... " << std::endl;
+        if (compare_matrices(C_ref, C_xsmm, m, n, ldc, ldc))
+        {
+            std::cout << "Test passed!" << std::endl;
+        }
+        else
+        {
+            std::cerr << "Test failed!" << std::endl;
+        }
         
         std::cout << "Starting time measuring (libxsmm kernel)." << std::endl;
         start_time = std::chrono::high_resolution_clock::now();
