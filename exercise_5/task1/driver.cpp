@@ -11,7 +11,7 @@ int main(int i_argc, char * i_argv[])
 {
     // first example
     int32_t l_data0 = 7743;
-    int32_t * l_ptr0 = &l_data0
+    int32_t * l_ptr0 = &l_data0;
     
     std::cout << "l_data0 / l_ptr0 / return value: "
               << l_data0 << " / "
