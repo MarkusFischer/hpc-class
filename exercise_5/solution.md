@@ -37,3 +37,13 @@ The function call in line 18 makes problems from the beginning because we start 
 The call in line 21 starts fine and reads the last value of l_a into registers x1 and x2, however the second load of the ldp is problematic again (since it exceeds the boundaries of the allocated space). 
 
 The call in line 24 works fine until the last load operation of ldp. 
+
+# Copying data
+
+The written and generated files can be found in the repository. 
+We can observe two things:
+
+(1) the compiler does not unroll loops and produces therefore an overhead for incrementing and comparing the loop counter and jumps
+(2) the generated code manipulates the address registers in extra steps and it loads only one value and not pairs. The reason behind this is probably the added flexibility through the loop. 
+
+As far as I can see there is nearly no difference between the generated and disassembled variant of our copy_c function. Maybe optimization flags would make a difference in terms of loop unrolling. 
