@@ -1,4 +1,4 @@
-text
+	.text
         .type gemm_asm_gp, %function
         .global gemm_asm_gp
         /*

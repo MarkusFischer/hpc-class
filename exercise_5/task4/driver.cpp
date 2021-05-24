@@ -4,7 +4,7 @@
 
 extern "C" 
 {
-void gemm_asm_gp( unit32_t const * i_a,
+void gemm_asm_gp( uint32_t const * i_a,
                   uint32_t const * i_b,
                   uint32_t       * io_c );
 
@@ -15,10 +15,10 @@ int main()
 
     uint32_t a[8] = {1, 2, 3, 5, 7, 11, 13, 17};
     uint32_t b[4] = {1, 2, 3, 4};
-    uint32_t c[8] = {0};
+    uint32_t c[8] = {1, 2, 3, 4, 5, 6, 7, 8};
     
     //NOTE more unit tests would be better but ... better than nothing
-    uint32_t c_res[8] = {15, 24, 29, 39, 31, 50, 61, 83};
+    uint32_t c_res[8] = {16, 26, 32, 43, 36, 56, 68, 91};
     
     gemm_asm_gp(a, b, c);
     
