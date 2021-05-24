@@ -1,3 +1,5 @@
+#include <stdint.h>
+
 void copy_c(uint32_t const * i_a,
             uint64_t       * o_b)
 {

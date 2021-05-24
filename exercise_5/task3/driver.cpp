@@ -1,5 +1,6 @@
 #include <cstdint>
 #include <cstdlib>
+#include <iostream>
 
 extern "C" {
   void copy_asm( uint32_t const * i_a,
@@ -13,11 +14,12 @@ bool check_and_reset(uint32_t const * i_a, uint64_t* io_b)
     bool same = true;
     for (int i = 0; i < 7; ++i)
     {
-        if (i_a[i] != i_b[i])
+	//std::cout << "i_a[" << i << "] : " << i_a[i] << " io_b[" << i << "] : " << io_b[i] << std::endl;
+        if (i_a[i] != io_b[i])
         {
             same = false;
         }
-        i_b[i] = 0;
+        io_b[i] = 0;
     }
     return same;
 }
@@ -39,8 +41,8 @@ int main() {
       std::cout << "failed" << std::endl;
   }
 
-   copy_c( l_a,
-           l_b );
+  copy_c( l_a,
+          l_b );
 
   std::cout << "copy_c ";
   if (check_and_reset(l_a, l_b))
