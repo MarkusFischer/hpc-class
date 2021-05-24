@@ -39,7 +39,7 @@ gemm_asm_gp:
         ldp w7, w8, [x0], #8
         ldp w9, w10, [x0], #8
         ldp w11, w12, [x0], #8
-        ldp w13, w13, [x0], #8
+        ldp w13, w14, [x0], #8
         
         // loading matrix C
         //
@@ -51,7 +51,7 @@ gemm_asm_gp:
         ldp w15, w16, [x2], #8
         ldp w17, w18, [x2], #8
         ldp w19, w20, [x2], #8
-        ldp w21, w22, [x2], #8
+        ldp w21, w22, [x2], #-32
        
         
         // C_11 (w15)
@@ -96,10 +96,10 @@ gemm_asm_gp:
         // w17 w21
         // w18 w22
         //
-        ldp w15, w16, [x2, #-32]!, #8
-        ldp w17, w18, [x2], #8
-        ldp w19, w20, [x2], #8
-        ldp w21, w22, [x2], #8
+        stp w15, w16, [x2], #8
+        stp w17, w18, [x2], #8
+        stp w19, w20, [x2], #8
+        stp w21, w22, [x2], #8
         
         // restore
         ldp x29, x30, [sp], #16
