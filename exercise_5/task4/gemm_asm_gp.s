@@ -48,10 +48,12 @@ gemm_asm_gp:
         // w17 w21
         // w18 w22
         //
+        //first save address for later write
+        mov x23, x2
         ldp w15, w16, [x2], #8
         ldp w17, w18, [x2], #8
         ldp w19, w20, [x2], #8
-        ldp w21, w22, [x2], #-32
+        ldp w21, w22, [x2], #8
        
         
         // C_11 (w15)
@@ -96,10 +98,10 @@ gemm_asm_gp:
         // w17 w21
         // w18 w22
         //
-        stp w15, w16, [x2], #8
-        stp w17, w18, [x2], #8
-        stp w19, w20, [x2], #8
-        stp w21, w22, [x2], #8
+        stp w15, w16, [x23], #8
+        stp w17, w18, [x23], #8
+        stp w19, w20, [x23], #8
+        stp w21, w22, [x23], #8
         
         // restore
         ldp x29, x30, [sp], #16
