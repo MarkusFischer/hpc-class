@@ -90,8 +90,7 @@ gemm_asm_gp:
         madd w22, w14, w6, w22
         
         
-        //Storing Matrix C
-        // loading matrix C
+        // storing matrix C
         //
         // w15 w19
         // w16 w20
