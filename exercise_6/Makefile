@@ -1,4 +1,4 @@
-BUILD_DIR = ./build 
+BUILD_DIR = ./build
 
 gemm_asm_asmid: driver.cpp ../exercise_4/src/gemm_ref.cpp ../exercise_4/src/util.cpp gemm_asm_asimd_16_4_4.s
 		g++ -pedantic -Wall -Wextra -Werror -O2 -c ../exercise_4/src/gemm_ref.cpp -o ${BUILD_DIR}/gemm_ref.o
