@@ -19,9 +19,9 @@ extern "C"
 int main()
 {
     const unsigned int iterations = 100000000;
-    const unsigned int m = 16;
-    const unsigned int n = 4;
-    const unsigned int k = 4;
+    unsigned int m = 16;
+    unsigned int n = 4;
+    unsigned int k = 4;
     
     
     float* A = random_matrix(m, k, m);
@@ -66,4 +66,51 @@ int main()
     delete[] B;
     delete[] C_ref;
     delete[] C_kernel;
+    
+    std::cout << std::endl << "#################" << std::endl << "16x12x4" << std::endl;
+    
+    k = 12;
+    A = random_matrix(m, k, m);
+    B = random_matrix(k, n, k);
+    C_ref = zero_matrix(m, n, m);
+    C_kernel = zero_matrix(m, n, m);
+        
+    gemm_asm_asimd_16_12_4(A, B, C_kernel);
+    gemm_ref(A, B, C_ref, m, n, k, m, n, m);
+    
+    
+    std::cout << "Comparing results...";
+    if (compare_matrices(C_ref, C_kernel, m, n, m, m))
+    {
+        std::cout << "passed";
+    }
+    else
+    {
+        std::cout << "failed";
+    }
+    std::cout << std::endl;
+    
+        
+    flop_gemm = m * n * k * 2;
+    std::cout << "Necessary floating point operations per gemm: " << flop_gemm << std::endl;
+        
+    std::cout << "Starting time measuring." << std::endl;
+        
+    start_time = std::chrono::high_resolution_clock::now();
+    for (size_t i = 0; i < iterations; ++i) 
+    {
+        gemm_asm_asimd_16_12_4(A, B, C_kernel);
+    }
+    end_time = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> needed_time = end_time - start_time;
+        
+    std::cout << "Needed time for " << iterations << " multiplications: " << needed_time.count() << std::endl;
+    std::cout << "Average time: " << needed_time.count() / iterations << std::endl;
+    std::cout << "Sustained FLOPS: " << flop_gemm * ((double) iterations) / needed_time.count() << std::endl;
+    
+    delete[] A;
+    delete[] B;
+    delete[] C_ref;
+    delete[] C_kernel;
+
 }
