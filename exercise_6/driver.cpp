@@ -18,7 +18,7 @@ extern "C"
 
 int main()
 {
-    const unsigned int iterations = 10000;
+    const unsigned int iterations = 1000000;
     const unsigned int m = 16;
     const unsigned int n = 4;
     const unsigned int k = 4;
@@ -33,7 +33,16 @@ int main()
     gemm_ref(A, B, C, m, n, k, m, n, m);
     
     
-    std::cout << "Comparing results..." << (compare_matrices(C_ref, C_kernel, m, n, m, m)) ? "passed" : "failed" << std::endl;
+    std::cout << "Comparing results...";
+    if (compare_matrices(C_ref, C_kernel, m, n, m, m))
+    {
+        std::cout << "passed";
+    }
+    else
+    {
+        std::cout << "failed";
+    }
+    std::cout << std::endl;
     
         
     int flop_gemm = m * n * k * 2;
