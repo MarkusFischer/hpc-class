@@ -39,6 +39,14 @@ float* random_matrix(unsigned int i_m,
     
     float* matrix = new float[i_n * i_ld];
     
+    for (size_t m = 0; m < i_ld; ++m)
+    {
+        for (size_t n = 0; n < i_n; ++n)
+        {
+            matrix[(n * i_ld) + m] = 0;
+        }
+    }
+    
     for (size_t m = 0; m < i_m; ++m)
     {
         for (size_t n = 0; n < i_n; ++n)
