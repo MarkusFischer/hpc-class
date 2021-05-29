@@ -18,7 +18,7 @@ extern "C"
 
 int main()
 {
-    const unsigned int iterations = 1000000;
+    const unsigned int iterations = 100000000;
     const unsigned int m = 16;
     const unsigned int n = 4;
     const unsigned int k = 4;
@@ -30,7 +30,7 @@ int main()
     float* C_kernel = zero_matrix(m, n, m);
         
     gemm_asm_asimd_16_4_4(A, B, C_kernel);
-    gemm_ref(A, B, C, m, n, k, m, n, m);
+    gemm_ref(A, B, C_ref, m, n, k, m, n, m);
     
     
     std::cout << "Comparing results...";
@@ -60,7 +60,7 @@ int main()
         
     std::cout << "Needed time for " << iterations << " multiplications: " << needed_time.count() << std::endl;
     std::cout << "Average time: " << needed_time.count() / iterations << std::endl;
-    std::cout << "Sustained GFLOPS: " << flop_gemm * ((double) iterations) / needed_time.count() << std::endl;
+    std::cout << "Sustained FLOPS: " << flop_gemm * ((double) iterations) / needed_time.count() << std::endl;
     
     delete[] A;
     delete[] B;
