@@ -121,13 +121,14 @@ gemm_asm_asimd_16_4_4:
         fmla v31.4s, v23.4s, v19.s[3]
         
         //store matrix C
-        st1 {v28.4s, v29.4s, v30.4s, v31.4s}, [x2]
-        sub x2, x2, #16*4
-        st1 {v24.4s, v25.4s, v26.4s, v27.4s}, [x2]
-        sub x2, x2, #16*4
-        st1 {v4.4s, v5.4s, v6.4s, v7.4s}, [x2]
-        sub x2, x2, #16*4
+        sub x2, x2, #3*16*4
         st1 {v0.4s, v1.4s, v2.4s, v3.4s}, [x2]
+        add x2, x2, #16*4
+        st1 {v4.4s, v5.4s, v6.4s, v7.4s}, [x2]
+        add x2, x2, #16*4
+        st1 {v24.4s, v25.4s, v26.4s, v27.4s}, [x2]
+        add x2, x2, #16*4
+        st1 {v28.4s, v29.4s, v30.4s, v31.4s}, [x2]
         
 
         ret
