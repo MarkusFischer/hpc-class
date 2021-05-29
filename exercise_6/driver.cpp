@@ -75,7 +75,7 @@ int main()
     C_ref = zero_matrix(m, n, m);
     C_kernel = zero_matrix(m, n, m);
         
-    gemm_asm_asimd_16_12_4(A, B, C_kernel);
+    gemm_asm_asimd_16_4_12(A, B, C_kernel);
     gemm_ref(A, B, C_ref, m, n, k, m, n, m);
     
     
@@ -99,7 +99,7 @@ int main()
     start_time = std::chrono::high_resolution_clock::now();
     for (size_t i = 0; i < iterations; ++i) 
     {
-        gemm_asm_asimd_16_12_4(A, B, C_kernel);
+        gemm_asm_asimd_16_4_12(A, B, C_kernel);
     }
     end_time = std::chrono::high_resolution_clock::now();
     needed_time = end_time - start_time;
