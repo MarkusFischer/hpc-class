@@ -76,7 +76,7 @@ int main()
     C_kernel = zero_matrix(m, n, m);
         
     gemm_asm_asimd_16_4_12(A, B, C_kernel);
-    gemm_ref(A, B, C_ref, m, n, k, m, n, m);
+    gemm_ref(A, B, C_ref, m, n, k, m, k, m);
     
     
     std::cout << "Comparing results...";

@@ -32,3 +32,18 @@ Starting time measuring.
 Needed time for 100000000 multiplications: 2.10127
 Average time: 2.10127e-08
 Sustained FLOPS: 2.43662e+10
+Comparing results...passed
+Necessary floating point operations per gemm: 512
+Starting time measuring.
+Needed time for 100000000 multiplications: 2.10127
+Average time: 2.10127e-08
+Sustained FLOPS: 2.43662e+10
+
+#################
+16x12x4
+Comparing results...passed
+Necessary floating point operations per gemm: 1536
+Starting time measuring.
+Needed time for 100000000 multiplications: 4.6028
+Average time: 4.6028e-08
+Sustained FLOPS: 3.3371e+10

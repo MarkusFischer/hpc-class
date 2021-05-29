@@ -32,9 +32,9 @@ loop_k:
         ld1 {v18.4s}, [x1]
         add x1, x1, #16*3
         ld1 {v19.4s}, [x1]
-        sub x1, x1, #2*16*3+2*16
-        
-        //loading first row of A
+        sub x1, x1, #2*16*3+16*2
+                
+        //loading first column of A
         ld1 {v20.4s, v21.4s, v22.4s, v23.4s}, [x0]
         add x0, x0, #16*4
         
