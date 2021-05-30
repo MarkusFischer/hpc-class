@@ -1,37 +1,36 @@
 no optimization
+---------------
+
 Comparing results...passed
 Necessary floating point operations per gemm: 512
 Starting time measuring.
 Needed time for 100000000 multiplications: 2.52158
 Average time: 2.52158e-08
 Sustained FLOPS: 2.03047e+10
+
 minimize stack usage
-Comparing results...passed
-Necessary floating point operations per gemm: 512
-Starting time measuring.
-Needed time for 100000000 multiplications: 2.52163
-Average time: 2.52163e-08
-Sustained FLOPS: 2.03044e+10
+--------------------
+
 Comparing results...passed
 Necessary floating point operations per gemm: 512
 Starting time measuring.
 Needed time for 100000000 multiplications: 2.10131
 Average time: 2.10131e-08
 Sustained FLOPS: 2.43657e+10
-opposit store
+
+opposite store
+--------------
+
 Comparing results...passed
 Necessary floating point operations per gemm: 512
 Starting time measuring.
 Needed time for 100000000 multiplications: 2.20132
 Average time: 2.20132e-08
 Sustained FLOPS: 2.32588e+10
-best performance
-Comparing results...passed
-Necessary floating point operations per gemm: 512
-Starting time measuring.
-Needed time for 100000000 multiplications: 2.10127
-Average time: 2.10127e-08
-Sustained FLOPS: 2.43662e+10
+
+best performance (identical minimize stack usage)
+-------------------------------------------------
+
 Comparing results...passed
 Necessary floating point operations per gemm: 512
 Starting time measuring.
