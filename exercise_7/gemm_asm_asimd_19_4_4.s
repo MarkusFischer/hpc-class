@@ -207,8 +207,8 @@ gemm_asm_asimd_19_4_4:
         fmla v4.2s, v20.2s, v18.s[3]
         fmla s5, s21, v18.s[3]
 
-        fmla v6.2s, v20.2s, v18.s[3]
-        fmla s7, s21, v18.s[3]
+        fmla v6.2s, v20.2s, v19.s[3]
+        fmla s7, s21, v19.s[3]
 
 
 

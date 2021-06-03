@@ -68,7 +68,7 @@ int main()
     delete[] C_ref;
     delete[] C_kernel;
     
-    std::cout << std::endl << "#################" << std::endl << "16x12x4" << std::endl;
+    std::cout << std::endl << "#################" << std::endl << "32x32x32" << std::endl;
     /*
     k = 12;
     A = random_matrix(m, k, m);
