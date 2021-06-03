@@ -165,7 +165,7 @@ gemm_asm_asimd_19_4_4:
         fmla v6.2s, v20.2s, v19.s[0]
         fmla s7, s21, v19.s[0]
 
-        ldr d22 [x0], #2*4
+        ldr d22, [x0], #2*4
         ldr s23, [x0], #17*4
 
         fmla v0.2s, v22.2s, v16.s[1]
