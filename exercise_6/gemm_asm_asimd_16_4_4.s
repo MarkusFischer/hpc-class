@@ -20,13 +20,15 @@ gemm_asm_asimd_16_4_4:
         ld1 {v24.4s, v25.4s, v26.4s, v27.4s}, [x2]
         add x2, x2, #16*4
         ld1 {v28.4s, v29.4s, v30.4s, v31.4s}, [x2]
+        sub x2, x2, #3*16*4
         
         //loading matrix B
         ld1 {v16.4s, v17.4s, v18.4s, v19.4s}, [x1]
         
         //loading first row of A
         ld1 {v20.4s, v21.4s, v22.4s, v23.4s}, [x0]
-        
+        add x0, x0, #16*4
+
         //multiply add
         fmla v0.4s, v20.4s, v16.s[0]
         fmla v1.4s, v21.4s, v16.s[0]
@@ -49,9 +51,10 @@ gemm_asm_asimd_16_4_4:
         fmla v31.4s, v23.4s, v19.s[0]
         
         
-        add x0, x0, #16*4
-        ld1 {v20.4s, v21.4s, v22.4s, v23.4s}, [x0]
         
+        ld1 {v20.4s, v21.4s, v22.4s, v23.4s}, [x0]
+        add x0, x0, #16*4
+
         fmla v0.4s, v20.4s, v16.s[1]
         fmla v1.4s, v21.4s, v16.s[1]
         fmla v2.4s, v22.4s, v16.s[1]
@@ -73,9 +76,9 @@ gemm_asm_asimd_16_4_4:
         fmla v31.4s, v23.4s, v19.s[1]
         
         
-        add x0, x0, #16*4
         ld1 {v20.4s, v21.4s, v22.4s, v23.4s}, [x0]
-        
+        add x0, x0, #16*4
+
         fmla v0.4s, v20.4s, v16.s[2]
         fmla v1.4s, v21.4s, v16.s[2]
         fmla v2.4s, v22.4s, v16.s[2]
@@ -97,7 +100,7 @@ gemm_asm_asimd_16_4_4:
         fmla v31.4s, v23.4s, v19.s[2]
         
         
-        add x0, x0, #16*4
+        
         ld1 {v20.4s, v21.4s, v22.4s, v23.4s}, [x0]
         
         fmla v0.4s, v20.4s, v16.s[3]
@@ -121,7 +124,7 @@ gemm_asm_asimd_16_4_4:
         fmla v31.4s, v23.4s, v19.s[3]
         
         //store matrix C
-        sub x2, x2, #3*16*4
+        
         st1 {v0.4s, v1.4s, v2.4s, v3.4s}, [x2]
         add x2, x2, #16*4
         st1 {v4.4s, v5.4s, v6.4s, v7.4s}, [x2]
