@@ -165,50 +165,50 @@ gemm_asm_asimd_19_4_4:
         fmla v6.2s, v20.2s, v19.s[0]
         fmla s7, s21, v19.s[0]
 
-        ldr d20, [x0], #2*4
-        ldr s21, [x0], #17*4
+        ldr d22 [x0], #2*4
+        ldr s23, [x0], #17*4
 
-        fmla v0.2s, v20.2s, v16.s[1]
-        fmla s1, s21, v16.s[1]
+        fmla v0.2s, v22.2s, v16.s[1]
+        fmla s1, s23, v16.s[1]
 
-        fmla v2.2s, v20.2s, v17.s[1]
-        fmla s3, s21, v17.s[1]
+        fmla v2.2s, v22.2s, v17.s[1]
+        fmla s3, s23, v17.s[1]
 
-        fmla v4.2s, v20.2s, v18.s[1]
-        fmla s5, s21, v18.s[1]
+        fmla v4.2s, v22.2s, v18.s[1]
+        fmla s5, s23, v18.s[1]
 
-        fmla v6.2s, v20.2s, v19.s[1]
-        fmla s7, s21, v19.s[1]
+        fmla v6.2s, v22.2s, v19.s[1]
+        fmla s7, s23, v19.s[1]
 
-        ldr d20, [x0], #2*4
-        ldr s21, [x0], #17*4
+        ldr d24, [x0], #2*4
+        ldr s25, [x0], #17*4
 
-        fmla v0.2s, v20.2s, v16.s[2]
-        fmla s1, s21, v16.s[2]
+        fmla v0.2s, v24.2s, v16.s[2]
+        fmla s1, s25, v16.s[2]
 
-        fmla v2.2s, v20.2s, v17.s[2]
-        fmla s3, s21, v17.s[2]
+        fmla v2.2s, v24.2s, v17.s[2]
+        fmla s3, s25, v17.s[2]
 
-        fmla v4.2s, v20.2s, v18.s[2]
-        fmla s5, s21, v18.s[2]
+        fmla v4.2s, v24.2s, v18.s[2]
+        fmla s5, s25, v18.s[2]
 
-        fmla v6.2s, v20.2s, v19.s[2]
-        fmla s7, s21, v19.s[2]
+        fmla v6.2s, v24.2s, v19.s[2]
+        fmla s7, s25, v19.s[2]
 
-        ldr d20, [x0], #2*4
-        ldr s21, [x0], #17*4
+        ldr d26, [x0], #2*4
+        ldr s27, [x0], #17*4
 
-        fmla v0.2s, v20.2s, v16.s[3]
-        fmla s1, s21, v16.s[3]
+        fmla v0.2s, v26.2s, v16.s[3]
+        fmla s1, s27, v16.s[3]
 
-        fmla v2.2s, v20.2s, v17.s[3]
-        fmla s3, s21, v17.s[3]
+        fmla v2.2s, v26.2s, v17.s[3]
+        fmla s3, s27, v17.s[3]
 
-        fmla v4.2s, v20.2s, v18.s[3]
-        fmla s5, s21, v18.s[3]
+        fmla v4.2s, v26.2s, v18.s[3]
+        fmla s5, s27, v18.s[3]
 
-        fmla v6.2s, v20.2s, v19.s[3]
-        fmla s7, s21, v19.s[3]
+        fmla v6.2s, v26.2s, v19.s[3]
+        fmla s7, s27, v19.s[3]
 
 
 
