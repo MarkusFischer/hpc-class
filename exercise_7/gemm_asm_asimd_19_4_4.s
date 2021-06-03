@@ -149,9 +149,21 @@ gemm_asm_asimd_19_4_4:
         ldr s7, [x2]
         sub x2, x2, #3*19*4 + 2*4
 
-        // fmlas
+        //loading A
         ldr d20, [x0], #2*4
         ldr s21, [x0], #17*4
+
+        ldr d22, [x0], #2*4
+        ldr s23, [x0], #17*4
+
+        ldr d24, [x0], #2*4
+        ldr s25, [x0], #17*4
+
+        ldr d26, [x0], #2*4
+        ldr s27, [x0], #17*4
+
+
+        //fmlas
 
         fmla v0.2s, v20.2s, v16.s[0]
         fmla s1, s21, v16.s[0]
@@ -165,9 +177,7 @@ gemm_asm_asimd_19_4_4:
         fmla v6.2s, v20.2s, v19.s[0]
         fmla s7, s21, v19.s[0]
 
-        ldr d22, [x0], #2*4
-        ldr s23, [x0], #17*4
-
+       
         fmla v0.2s, v22.2s, v16.s[1]
         fmla s1, s23, v16.s[1]
 
@@ -180,9 +190,7 @@ gemm_asm_asimd_19_4_4:
         fmla v6.2s, v22.2s, v19.s[1]
         fmla s7, s23, v19.s[1]
 
-        ldr d24, [x0], #2*4
-        ldr s25, [x0], #17*4
-
+       
         fmla v0.2s, v24.2s, v16.s[2]
         fmla s1, s25, v16.s[2]
 
@@ -195,8 +203,6 @@ gemm_asm_asimd_19_4_4:
         fmla v6.2s, v24.2s, v19.s[2]
         fmla s7, s25, v19.s[2]
 
-        ldr d26, [x0], #2*4
-        ldr s27, [x0], #17*4
 
         fmla v0.2s, v26.2s, v16.s[3]
         fmla s1, s27, v16.s[3]
