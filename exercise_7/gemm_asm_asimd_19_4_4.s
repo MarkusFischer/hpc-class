@@ -12,7 +12,7 @@
          */ 
 gemm_asm_asimd_19_4_4:
         
-        //loading matrix C
+        //loading (upper part) matrix C
         ld1 {v0.4s, v1.4s, v2.4s, v3.4s}, [x2]
         add x2, x2, #19*4
         ld1 {v4.4s, v5.4s, v6.4s, v7.4s}, [x2]
@@ -102,6 +102,7 @@ gemm_asm_asimd_19_4_4:
         
         
         ld1 {v20.4s, v21.4s, v22.4s, v23.4s}, [x0]
+        sub x0, x0, #3*19*4-16*4
         
         fmla v0.4s, v20.4s, v16.s[3]
         fmla v1.4s, v21.4s, v16.s[3]
@@ -123,7 +124,7 @@ gemm_asm_asimd_19_4_4:
         fmla v30.4s, v22.4s, v19.s[3]
         fmla v31.4s, v23.4s, v19.s[3]
         
-        //store matrix C
+        //store (upper part) of matrix C
         
         st1 {v0.4s, v1.4s, v2.4s, v3.4s}, [x2]
         add x2, x2, #19*4
@@ -132,7 +133,84 @@ gemm_asm_asimd_19_4_4:
         st1 {v24.4s, v25.4s, v26.4s, v27.4s}, [x2]
         add x2, x2, #19*4
         st1 {v28.4s, v29.4s, v30.4s, v31.4s}, [x2]
-        
+        sub x2, x2, #3*19*4-16*4
 
+        // loading lower part of matrix C
+        ldr d0, [x2], #2*4
+        ldr s1, [x2], #17*4
+
+        ldr d2, [x2], #2*4
+        ldr s3, [x2], #17*4
+
+        ldr d4, [x2], #2*4
+        ldr s5, [x2], #17*4
+
+        ldr d6, [x2], #2*4
+        ldr s7, [x2]
+        sub x2, x2, #3*19*4 + 2*4
+
+
+        // fmlas
+        ldr d20, [x0], #2*4
+        ldr s21, [x0], #17*4
+
+        fmla v0.2s, v20.s, v16.s[0]
+        fmla s1, s21, v16.s[0]
+
+        fmla v2.2s, v20.s, v17.s[0]
+        fmla s3, s21, v17.s[0]
+
+        fmla v4.2s, v20.s, v18.s[0]
+        fmla s5, s21, v18.s[0]
+
+        fmla v6.2s, v20.s, v18.s[0]
+        fmla s7, s21, v18.s[0]
+
+        ldr d20, [x0], #2*4
+        ldr s21, [x0], #17*4
+
+        fmla v0.2s, v20.s, v16.s[1]
+        fmla s1, s21, v16.s[1]
+
+        fmla v2.2s, v20.s, v17.s[1]
+        fmla s3, s21, v17.s[1]
+
+        fmla v4.2s, v20.s, v18.s[1]
+        fmla s5, s21, v18.s[1]
+
+        fmla v6.2s, v20.s, v18.s[1]
+        fmla s7, s21, v18.s[1]
+
+        ldr d20, [x0], #2*4
+        ldr s21, [x0], #17*4
+
+        fmla v0.2s, v20.s, v16.s[2]
+        fmla s1, s21, v16.s[2]
+
+        fmla v2.2s, v20.s, v17.s[2]
+        fmla s3, s21, v17.s[2]
+
+        fmla v4.2s, v20.s, v18.s[2]
+        fmla s5, s21, v18.s[2]
+
+        fmla v6.2s, v20.s, v18.s[2]
+        fmla s7, s21, v18.s[2]
+
+
+
+        //store lower part of matrix C
+        str d0, [x2], #2*4
+        str s1, [x2], #17*4
+
+        str d2, [x2], #2*4
+        str s3, [x2], #17*4
+
+        str d4, [x2], #2*4
+        str s5, [x2], #17*4
+
+        str d6, [x2], #2*4
+        str s7, [x2]
+
+        
         ret
         .size gemm_asm_asimd_19_4_4, (. - gemm_asm_asimd_19_4_4)
