@@ -169,8 +169,7 @@ loop_k:
         add x2, x2, #3*32*4
 
         //set A ptr to 1th element (overflow imm12)
-        sub x0, x0, #16*32*4
-        sub x0, x0, #16*32*4+16*4
+        sub x0, x0, #2*16*4
 
         //set B ptr to (4)*iteration + 1 th column, first element
         add x1, x1, #4*32*4
