@@ -32,10 +32,10 @@ loop_m:
         mov x3, #8
 loop_k:
         //loading block of matrix B
-        ldr v16, [x1], #16*8
-        ldr v17, [x1], #16*8
-        ldr v18, [x1], #16*8
-        ldr v19, [x1], #16*8
+        ld1 {v16.4s}, [x1], #16*8
+        ld1 {v17.4s}, [x1], #16*8
+        ld1 {v18.4s}, [x1], #16*8
+        ld1 {v19.4s}, [x1], #16*8
 
         //move ptr 4 down
         sub x1, x1, #4*16*8-16
