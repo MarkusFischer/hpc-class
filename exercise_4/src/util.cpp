@@ -18,12 +18,13 @@ bool compare_matrices(float const* i_a,
         for (size_t n = 0; n < i_n; ++n)
         {
             if (std::abs(i_a[(n * i_lda) + m] - i_b[(n * i_ldb) + m]) > eps)
-	    {
-		if (verbose)
-		{
-		    std::cerr << "Missmatch at m: " << m << " n: " << n << std::endl;
-		}
+	        {
+		        if (verbose)
+		        {
+		            std::cerr << "Missmatch at m: " << m << " n: " << n << std::endl;
+		        }
                 return false;
+            }
         }
     }
     return true;
