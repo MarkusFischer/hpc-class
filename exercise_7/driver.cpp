@@ -19,6 +19,7 @@ extern "C"
 int main()
 {
     const unsigned int iterations = 100000000;
+    const unsigned int iterations_large = 1000000;
     unsigned int m = 19;
     unsigned int n = 4;
     unsigned int k = 4;
@@ -100,7 +101,7 @@ int main()
     std::cout << "Starting time measuring." << std::endl;
         
     start_time = std::chrono::high_resolution_clock::now();
-    for (size_t i = 0; i < iterations; ++i) 
+    for (size_t i = 0; i < iterations_large; ++i) 
     {
         gemm_asm_asimd_32_32_32(A, B, C_kernel);
     }
