@@ -1,6 +1,6 @@
         .text
-        .type gemm_asm_asimd_16_4_4, %function
-        .global gemm_asm_asimd_16_4_4
+        .type gemm_asm_asimd_32_32_32, %function
+        .global gemm_asm_asimd_32_32_32
         /*
          * Performs the matrix-multiplication C+=A*B
          * with the shapes (16x4) = (16x5) * (4x4).
@@ -10,7 +10,7 @@
          * @param x1 pointer to B.
          * @param x2 pointer to C.
          */ 
-gemm_asm_asimd_16_4_4:
+gemm_asm_asimd_32_32_32:
         
         //loading matrix C
         ld1 {v0.4s, v1.4s, v2.4s, v3.4s}, [x2]
@@ -135,4 +135,4 @@ gemm_asm_asimd_16_4_4:
         
 
         ret
-        .size gemm_asm_asimd_16_4_4, (. - gemm_asm_asimd_16_4_4)
+        .size gemm_asm_asimd_32_32_32, (. - gemm_asm_asimd_32_32_32)
