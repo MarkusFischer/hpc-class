@@ -1,5 +1,6 @@
 #include <cmath>
 #include <random>
+#include <iostream>
 
 #include "util.hpp"
 
@@ -9,13 +10,19 @@ bool compare_matrices(float const* i_a,
                       unsigned int i_n,
                       unsigned int i_lda,
                       unsigned int i_ldb,
-                      float eps)
+                      float eps,
+		      bool verbose)
 {
     for (size_t m = 0; m < i_m; ++m)
     {
         for (size_t n = 0; n < i_n; ++n)
         {
             if (std::abs(i_a[(n * i_lda) + m] - i_b[(n * i_ldb) + m]) > eps)
+	    {
+		if (verbose)
+		{
+		    std::cerr << "Missmatch at m: " << m << " n: " << n << std::endl;
+		}
                 return false;
         }
     }

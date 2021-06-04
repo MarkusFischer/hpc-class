@@ -35,7 +35,7 @@ int main()
     std::cout << "19x4x4" << std::endl;
     
     std::cout << "Comparing results...";
-    if (compare_matrices(C_ref, C_kernel, m, n, m, m))
+    if (compare_matrices(C_ref, C_kernel, m, n, m, m, 1.0e-6f, true))
     {
         std::cout << "passed";
     }
