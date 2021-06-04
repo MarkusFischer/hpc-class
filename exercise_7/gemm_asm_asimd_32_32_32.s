@@ -145,12 +145,12 @@ loop_k:
         sub x3, x3, #1
         cbnz x3, loop_k
 
-        //inner loop_k finished
+/*        //inner loop_k finished
         //move A ptr down
         sub x0, x0, #32*32*4-16*4
         //reset B ptr
         sub x1, x1, #32*4
-
+ */
         //store matrix C
         
         st1 {v0.4s, v1.4s, v2.4s, v3.4s}, [x2]
@@ -161,7 +161,7 @@ loop_k:
         add x2, x2, #32*4
         st1 {v28.4s, v29.4s, v30.4s, v31.4s}, [x2]
         sub x2, x2, #3*32*4-16*4
-
+/*
         sub x4, x4, #1
         cbnz x4, loop_m
 
@@ -177,6 +177,6 @@ loop_k:
 
         sub x5, x5, #1
         cbnz x5, loop_n
-
+ */
         ret
         .size gemm_asm_asimd_32_32_32, (. - gemm_asm_asimd_32_32_32)

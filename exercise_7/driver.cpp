@@ -70,8 +70,8 @@ int main()
     
     std::cout << std::endl << "#################" << std::endl << "32x32x32" << std::endl;
     
-    m = 32;
-    n = 32;
+    m = 16;
+    n = 4;
     k = 32;
     A = random_matrix(m, k, m);
     B = random_matrix(k, n, k);
