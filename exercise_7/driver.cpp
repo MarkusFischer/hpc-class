@@ -69,14 +69,16 @@ int main()
     delete[] C_kernel;
     
     std::cout << std::endl << "#################" << std::endl << "32x32x32" << std::endl;
-    /*
-    k = 12;
+    
+    m = 32;
+    n = 32;
+    k = 32;
     A = random_matrix(m, k, m);
     B = random_matrix(k, n, k);
     C_ref = zero_matrix(m, n, m);
     C_kernel = zero_matrix(m, n, m);
         
-    gemm_asm_asimd_16_4_12(A, B, C_kernel);
+    gemm_asm_asimd_32_32_32(A, B, C_kernel);
     gemm_ref(A, B, C_ref, m, n, k, m, k, m);
     
     
@@ -100,7 +102,7 @@ int main()
     start_time = std::chrono::high_resolution_clock::now();
     for (size_t i = 0; i < iterations; ++i) 
     {
-        gemm_asm_asimd_16_4_12(A, B, C_kernel);
+        gemm_asm_asimd_32_32_32(A, B, C_kernel);
     }
     end_time = std::chrono::high_resolution_clock::now();
     needed_time = end_time - start_time;
@@ -113,5 +115,5 @@ int main()
     delete[] B;
     delete[] C_ref;
     delete[] C_kernel;
-    */
+    
 }
