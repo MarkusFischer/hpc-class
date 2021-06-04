@@ -164,19 +164,19 @@ loop_k:
 
         sub x4, x4, #1
         cbnz x4, loop_m
-/*
-        //set C ptr to 5th column, first element
-        add x2, x2, #3*32
+
+        //set C ptr to (4)*iteration + 1 th column, first element
+        add x2, x2, #3*32*4
 
         //set A ptr to 1th element (overflow imm12)
         sub x0, x0, #16*32*4
         sub x0, x0, #16*32*4+16*4
 
-        //set B ptr to 5th column, first element
+        //set B ptr to (4)*iteration + 1 th column, first element
         add x1, x1, #4*32*4
 
         sub x5, x5, #1
         cbnz x5, loop_n
- */
+ 
         ret
         .size gemm_asm_asimd_32_32_32, (. - gemm_asm_asimd_32_32_32)
