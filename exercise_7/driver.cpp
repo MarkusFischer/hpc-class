@@ -108,9 +108,9 @@ int main()
     end_time = std::chrono::high_resolution_clock::now();
     needed_time = end_time - start_time;
         
-    std::cout << "Needed time for " << iterations << " multiplications: " << needed_time.count() << std::endl;
-    std::cout << "Average time: " << needed_time.count() / iterations << std::endl;
-    std::cout << "Sustained FLOPS: " << flop_gemm * ((double) iterations) / needed_time.count() << std::endl;
+    std::cout << "Needed time for " << iterations_large << " multiplications: " << needed_time.count() << std::endl;
+    std::cout << "Average time: " << needed_time.count() / iterations_large << std::endl;
+    std::cout << "Sustained FLOPS: " << flop_gemm * ((double) iterations_large) / needed_time.count() << std::endl;
     
     delete[] A;
     delete[] B;
