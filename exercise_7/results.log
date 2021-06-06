@@ -1,0 +1,40 @@
+19x4x4
+Comparing results...passed
+Necessary floating point operations per gemm: 608
+Starting time measuring.
+Needed time for 100000000 multiplications: 3.25972
+Average time: 3.25972e-08
+Sustained FLOPS: 1.86519e+10
+
+#################
+32x32x32
+
+batch load
+19x4x4
+Comparing results...passed
+Necessary floating point operations per gemm: 608
+Starting time measuring.
+Needed time for 100000000 multiplications: 3.16167
+Average time: 3.16167e-08
+Sustained FLOPS: 1.92304e+10
+
+#################
+32x32x32
+
+final results
+19x4x4
+Comparing results...passed
+Necessary floating point operations per gemm: 608
+Starting time measuring.
+Needed time for 100000000 multiplications: 3.16151
+Average time: 3.16151e-08
+Sustained FLOPS: 1.92313e+10
+
+#################
+32x32x32
+Comparing results...passed
+Necessary floating point operations per gemm: 65536
+Starting time measuring.
+Needed time for 1000000 multiplications: 1.73964
+Average time: 1.73964e-06
+Sustained FLOPS: 3.76723e+10
