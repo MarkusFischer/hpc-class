@@ -11,7 +11,7 @@ triad_low:
 loop:
     ld1w {z0.s}, p0/z, [x1, x4, lsl #2]
     ld1w {z1.s}, p0/z, [x2, x4, lsl #2]
-    fmla z0.s, z1.s, z2.s
+    fmla z0.s, p0/m, z1.s, z2.s
     st1w {z0.s}, p0, [x3, x4, lsl #2]
     incw x4
     whilelt p0.s, x4, x0
