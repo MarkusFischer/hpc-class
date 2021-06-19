@@ -19,7 +19,7 @@ void triad_high( uint64_t         i_nValues,
   }
 }
 
-void main(int argc, char** argv)
+int main(int argc, char** argv)
 {
     if (argc != 2)
     {
