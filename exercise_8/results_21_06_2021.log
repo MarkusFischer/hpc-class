@@ -1,0 +1,110 @@
+[markus@ip-172-31-8-41 exercise_8]$ armie -msve-vector-bits=128 triad
+Usage: triad nValues
+[markus@ip-172-31-8-41 exercise_8]$ armie -msve-vector-bits=128 triad 1
+Compared 1 values and triad_high and triad_low had same results
+[markus@ip-172-31-8-41 exercise_8]$ armie -msve-vector-bits=128 triad 4
+Compared 4 values and triad_high and triad_low had same results
+[markus@ip-172-31-8-41 exercise_8]$ armie -msve-vector-bits=128 triad 16
+Compared 16 values and triad_high and triad_low had same results
+[markus@ip-172-31-8-41 exercise_8]$ armie -msve-vector-bits=512 triad 16
+Compared 16 values and triad_high and triad_low had same results
+[markus@ip-172-31-8-41 exercise_8]$ armie -msve-vector-bits=512 triad 40
+Compared 40 values and triad_high and triad_low had same results
+[markus@ip-172-31-8-41 exercise_8]$ armie -msve-vector-bits=2048 triad 16
+Compared 16 values and triad_high and triad_low had same results
+[markus@ip-172-31-8-41 exercise_8]$ armie -msve-vector-bits=2048 triad 128
+Compared 128 values and triad_high and triad_low had same results
+
+
+[markus@ip-172-31-8-41 exercise_8]$ armie -msve-vector-bits=128 driver_sve2
+fmlalb kernel
+i / in1 / in2 / out: 0 / 2 / 3 / 0
+i / in1 / in2 / out: 1 / 4 / 6 / 0
+i / in1 / in2 / out: 2 / 6 / 9 / 0
+i / in1 / in2 / out: 3 / 8 / 12 / 0
+[...]
+i / in1 / in2 / out: 127 / 256 / 384 / 0
+
+
+fmlalt kernel
+i / in1 / in2 / out: 0 / 2 / 3 / 4.25
+i / in1 / in2 / out: 1 / 4 / 6 / 5.34375
+i / in1 / in2 / out: 2 / 6 / 9 / 6.01172
+i / in1 / in2 / out: 3 / 8 / 12 / 6.5625
+i / in1 / in2 / out: 4 / 10 / 15 / 0
+[...]
+i / in1 / in2 / out: 127 / 256 / 384 / 0
+
+
+udot kernel
+i / in1 / in2 / out: 0 / 2 / 3 / -1.78264e+29
+i / in1 / in2 / out: 1 / 4 / 6 / -1.78728e+29
+i / in1 / in2 / out: 2 / 6 / 9 / -1.78323e+29
+i / in1 / in2 / out: 3 / 8 / 12 / -1.78266e+29
+[...]
+i / in1 / in2 / out: 127 / 256 / 384 / 0
+
+[markus@ip-172-31-8-41 exercise_8]$ armie -msve-vector-bits=512 driver_sve2
+fmlalb kernel
+i / in1 / in2 / out: 0 / 2 / 3 / 0
+i / in1 / in2 / out: 1 / 4 / 6 / 0
+i / in1 / in2 / out: 2 / 6 / 9 / 0
+i / in1 / in2 / out: 3 / 8 / 12 / 0
+i / in1 / in2 / out: 4 / 10 / 15 / 0
+i / in1 / in2 / out: 5 / 12 / 18 / 0
+i / in1 / in2 / out: 6 / 14 / 21 / 0
+i / in1 / in2 / out: 7 / 16 / 24 / 0
+i / in1 / in2 / out: 8 / 18 / 27 / 0
+i / in1 / in2 / out: 9 / 20 / 30 / 0
+i / in1 / in2 / out: 10 / 22 / 33 / 0
+i / in1 / in2 / out: 11 / 24 / 36 / 0
+i / in1 / in2 / out: 12 / 26 / 39 / 0
+i / in1 / in2 / out: 13 / 28 / 42 / 0
+i / in1 / in2 / out: 14 / 30 / 45 / 0
+i / in1 / in2 / out: 15 / 32 / 48 / 0
+i / in1 / in2 / out: 16 / 34 / 51 / 0
+[...]
+i / in1 / in2 / out: 127 / 256 / 384 / 0
+
+
+fmlalt kernel
+i / in1 / in2 / out: 0 / 2 / 3 / 4.25
+i / in1 / in2 / out: 1 / 4 / 6 / 5.34375
+i / in1 / in2 / out: 2 / 6 / 9 / 6.01172
+i / in1 / in2 / out: 3 / 8 / 12 / 6.5625
+i / in1 / in2 / out: 4 / 10 / 15 / 6.9668
+i / in1 / in2 / out: 5 / 12 / 18 / 7.30078
+i / in1 / in2 / out: 6 / 14 / 21 / 7.60059
+i / in1 / in2 / out: 7 / 16 / 24 / 7.90625
+i / in1 / in2 / out: 8 / 18 / 27 / 8.12646
+i / in1 / in2 / out: 9 / 20 / 30 / 8.34961
+i / in1 / in2 / out: 10 / 22 / 33 / 8.55347
+i / in1 / in2 / out: 11 / 24 / 36 / 8.71484
+i / in1 / in2 / out: 12 / 26 / 39 / 8.87769
+i / in1 / in2 / out: 13 / 28 / 42 / 9.04199
+i / in1 / in2 / out: 14 / 30 / 45 / 9.20776
+i / in1 / in2 / out: 15 / 32 / 48 / 9.375
+i / in1 / in2 / out: 16 / 34 / 51 / 0
+[...]
+i / in1 / in2 / out: 127 / 256 / 384 / 0
+
+
+udot kernel
+i / in1 / in2 / out: 0 / 2 / 3 / -1.78264e+29
+i / in1 / in2 / out: 1 / 4 / 6 / -1.78728e+29
+i / in1 / in2 / out: 2 / 6 / 9 / -1.78323e+29
+i / in1 / in2 / out: 3 / 8 / 12 / -1.78266e+29
+i / in1 / in2 / out: 4 / 10 / 15 / 6.97052
+i / in1 / in2 / out: 5 / 12 / 18 / 7.30719
+i / in1 / in2 / out: 6 / 14 / 21 / 7.61029
+i / in1 / in2 / out: 7 / 16 / 24 / 7.91998
+i / in1 / in2 / out: 8 / 18 / 27 / 8.16016
+i / in1 / in2 / out: 9 / 20 / 30 / 8.39026
+i / in1 / in2 / out: 10 / 22 / 33 / 8.55823
+i / in1 / in2 / out: 11 / 24 / 36 / 8.72186
+i / in1 / in2 / out: 12 / 26 / 39 / 8.88733
+i / in1 / in2 / out: 13 / 28 / 42 / 9.05463
+i / in1 / in2 / out: 14 / 30 / 45 / 9.22376
+i / in1 / in2 / out: 15 / 32 / 48 / 9.37915
+[...]
+i / in1 / in2 / out: 127 / 256 / 384 / 0
