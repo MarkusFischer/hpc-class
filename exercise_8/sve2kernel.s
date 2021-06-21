@@ -40,6 +40,6 @@ fmlalt_example:
 udot_example:
     ldr z0, [x0]
     ldr z1, [x1]
-    udot z3.s, z1.h, z0.h
+    udot z3.s, z1.b, z0.b
     str z3, [x2]    
     ret
