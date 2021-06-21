@@ -20,7 +20,6 @@ int main()
         dataIn1[i] = (i + 1) * 2;
         dataIn2[i] = (i + 1) * 3;
     }
-    return 0;
 
     std::cout << "fmlalb kernel" << std::endl;
     fmlalb_example(dataIn1, dataIn2, dataOut);
