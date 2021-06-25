@@ -73,6 +73,22 @@ class mini_jit::instructions::Base {
                               uint8_t  i_regGpSrc,
                               uint16_t i_imm12,
                               uint8_t  i_size );
+
+
+    /**
+     * Gets the machine code for multiply.
+     *
+     * @param i_regGpDes general purpose destination register.
+     * @param i_regGpSrc1 general purpose source register 1.
+     * @param i_regGpSrc1 general purpose source register 2.
+     * @param i_size 32-bit version if 0, 64-bit version if 1.
+     *
+     * @return instruction.
+     **/
+    static uint32_t dpMulReg( uint8_t i_regGpDes,
+                              uint8_t i_regGpSrc1,
+                              uint8_t i_regGpSrc2,
+                              uint8_t i_size );
 };
 
 #endif
