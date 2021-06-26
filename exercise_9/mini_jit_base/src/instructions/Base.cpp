@@ -74,8 +74,8 @@ uint32_t mini_jit::instructions::Base::dpMulReg( uint8_t i_regGpDes,
   uint32_t l_ins = 0x9B007C00;
 
   l_ins |= 0x1f & i_regGpDes;
-  l_ins |= 0x1f & i_regGpSrc1 << 5;
-  l_ins |= 0x1f & i_regGpSrc2 << 16;
+  l_ins |= (0x1f & i_regGpSrc1) << 5;
+  l_ins |= (0x1f & i_regGpSrc2) << 16;
   l_ins |= (0x1 & i_size) << 31;
 
   return l_ins;
