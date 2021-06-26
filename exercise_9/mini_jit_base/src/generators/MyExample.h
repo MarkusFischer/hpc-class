@@ -17,9 +17,9 @@ class mini_jit::generators::MyExample {
     
   public:
     /**
-     * Generates a kernel which calculates the faculty through a loop.
+     * Generates a kernel which calculates the factorial through a loop.
      *
-     * @param i_fac number for which the faculty should be computed
+     * @param i_fac number for which the factorial should be computed
      * @return function pointer to kernel.
      **/
     uint32_t ( *generate(uint32_t i_fac) )();

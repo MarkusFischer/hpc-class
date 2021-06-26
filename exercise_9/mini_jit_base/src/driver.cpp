@@ -25,7 +25,7 @@ int main() {
   std::cout << "  running" << std::endl;
   std::cout << "    result: " << l_funcLoop() << std::endl;
 
-  std::cout << "MyExample (faculty):" << std::endl;
+  std::cout << "MyExample (factorial):" << std::endl;
   std::cout << "  generating" << std::endl;
   mini_jit::generators::MyExample l_myExample;
   uint32_t (* l_funcMyExample)() = l_myExample.generate( 4 );
