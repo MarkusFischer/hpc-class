@@ -45,8 +45,8 @@ uint32_t ( *mini_jit::generators::Loop::generate( uint32_t i_nIterations ) )() {
   m_kernel.addInstruction( l_ins );
 
   // we might debug through file-io
-  // std::string l_file = "loop.bin";
-  // m_kernel.write( l_file.c_str() );
+  std::string l_file = "loop.bin";
+  m_kernel.write( l_file.c_str() );
 
   m_kernel.setKernel();
 

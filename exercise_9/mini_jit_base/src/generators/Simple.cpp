@@ -15,8 +15,8 @@ uint32_t ( *mini_jit::generators::Simple::generate() )() {
 
 
   // we might debug through file-io
-  // std::string l_file = "simple.bin";
-  // m_kernel.write( l_file.c_str() );
+  std::string l_file = "simple.bin";
+  m_kernel.write( l_file.c_str() );
 
   m_kernel.setKernel();
 

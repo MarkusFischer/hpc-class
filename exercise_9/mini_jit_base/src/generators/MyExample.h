@@ -1,5 +1,5 @@
-#ifndef MINI_JIT_GENERATORS_LOOP_H
-#define MINI_JIT_GENERATORS_LOOP_H
+#ifndef MINI_JIT_GENERATORS_MYEXAMPLE_H
+#define MINI_JIT_GENERATORS_MYEXAMPLE_H
 
 #include "../backend/Kernel.h"
 #include "../instructions/Base.h"
@@ -17,11 +17,12 @@ class mini_jit::generators::MyExample {
     
   public:
     /**
-     * Generates a kernel which calculates the faculty of x0 through a loop.
+     * Generates a kernel which calculates the faculty through a loop.
      *
+     * @param i_fac number for which the faculty should be computed
      * @return function pointer to kernel.
      **/
-    uint32_t ( *generate() )();
+    uint32_t ( *generate(uint32_t i_fac) )();
 };
 
 #endif
