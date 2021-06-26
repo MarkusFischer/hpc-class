@@ -26,6 +26,18 @@ uint32_t mini_jit::instructions::Base::dpMovImm( uint8_t  i_regGp,
   return l_ins;
 }
 
+uint32_t mini_jit::instructions::Base::dpMovReg( uint8_t  i_regGpDes,
+                                                 uint8_t i_regGpSrc,
+                                                 uint8_t  i_size )
+{
+  uint32_t l_ins = 0xAA0003E0;
+  l_ins |= 0x1f & i_regGpDes;
+  l_ins |= (0x1f & i_regGpSrc) << 16;
+  l_ins |= (0x1 & i_size) << 31;
+
+  return l_ins;
+}
+
 uint32_t mini_jit::instructions::Base::dpAddImm( uint8_t  i_regGpDes,
                                                  uint8_t  i_regGpSrc,
                                                  uint16_t i_imm12,

@@ -45,6 +45,19 @@ class mini_jit::instructions::Base {
                               uint8_t  i_size );
 
     /**
+     * Gets the machine code for a move between registers.
+     *
+     * @param i_regGpDes general purpose register which is set.
+     * @param i_regGpSrc general purpose register source
+     * @param i_size 32-bit version if 0, 64-bit version if 1.
+     *
+     * @return instruction.
+     **/
+    static uint32_t dpMovReg( uint8_t  i_regGpDes,
+                              uint8_t i_regGpSrc,
+                              uint8_t  i_size );
+
+    /**
      * Gets the machine code for add immediate.
      *
      * @param i_regGpDes general purpose destination register.
