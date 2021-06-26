@@ -1,0 +1,34 @@
+===============================================================================
+All tests passed (10 assertions in 5 test cases)
+
+###########################
+### welcome to mini_jit ###
+###########################
+simple:
+  generating simple kernel
+  running
+    result: 3
+loop:
+  generating
+  running
+    result: 32
+MyExample (factorial):
+  generating
+  running
+    result: 24
+##############################
+### mini_jit says bye, bye ###
+##############################
+
+myexample.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000000000 <.data>:
+   0:	d2800020 	mov	x0, #0x1                   	// #1
+   4:	d2800081 	mov	x1, #0x4                   	// #4
+   8:	9b007c20 	mul	x0, x1, x0
+   c:	d1000421 	sub	x1, x1, #0x1
+  10:	b5ffffc1 	cbnz	x1, 0x8
+  14:	d65f03c0 	ret
